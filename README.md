@@ -3,6 +3,7 @@
 ```bash
 $ git remote rm origin
 ```
+Above is not necessary because of folk.
 
 ### IntelliJ
 From Project Structure, select Java 8 (Java 10 does not work)
