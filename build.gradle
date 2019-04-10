@@ -26,6 +26,11 @@ repositories {
 
 dependencies {
     compile 'io.vertx:vertx-core:3.0.0-milestone4'
+    compile 'io.vertx:vertx-apex:3.0.0-milestone4'
+    compile 'io.vertx:vertx-jdbc-service:3.0.0-milestone4'
+    compile 'org.codehaus.groovy:groovy-all:2.3.6'
+    compile 'org.apache.hadoop:hadoop-common:+'
+    compile "org.apache.hive:hive-jdbc:1.2.1"
 }
 
 shadowJar {
