@@ -8,7 +8,7 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'com.github.johnrengelman.shadow'
 
-version = '3.0.0-milestone4'
+version = '3.7.0'
 
 if (!JavaVersion.current().java8Compatible) {
     throw new IllegalStateException('''A Haiku:
@@ -25,10 +25,10 @@ repositories {
 }
 
 dependencies {
-    compile 'io.vertx:vertx-core:3.0.0-milestone4'
-    compile 'io.vertx:vertx-apex:3.0.0-milestone4'
-    compile 'io.vertx:vertx-jdbc-service:3.0.0-milestone4'
-    compile 'org.codehaus.groovy:groovy-all:2.3.6'
+    compile 'io.vertx:vertx-core:'+version
+    compile 'io.vertx:vertx-apex:'+version
+    compile 'io.vertx:vertx-jdbc-service:'+version
+    compile 'org.codehaus.groovy:groovy-all:2.5.6'
     compile 'org.apache.hadoop:hadoop-common:+'
     compile "org.apache.hive:hive-jdbc:1.2.1"
 }
@@ -37,7 +37,7 @@ shadowJar {
     classifier = 'fat'
     manifest {
         attributes 'Main-Class': 'io.vertx.core.Starter'
-        attributes 'Main-Verticle': 'com.example.helloworld.HelloWorldVerticle'
+        attributes 'Main-Verticle': 'com.example.vertxhivejdbc.ServerVerticle'
     }
     mergeServiceFiles {
         include 'META-INF/services/io.vertx.core.spi.VerticleFactory'

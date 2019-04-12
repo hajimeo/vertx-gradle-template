@@ -31,7 +31,7 @@ public class ServerVerticle extends AbstractVerticle {
           routingContext.next();
         });
 
-        router.get("/atscale").handler(this::handleListProduct);
+        router.get("/atscale").handler(this::handleListResult);
 
         vertx.createHttpServer().requestHandler(router::accept).listen(8080);
       } else {
@@ -40,7 +40,7 @@ public class ServerVerticle extends AbstractVerticle {
     });
   }
 
-  private void handleListProduct(RoutingContext routingContext) {
+  private void handleListResult(RoutingContext routingContext) {
     JdbcService proxy = JdbcService.createEventBusProxy(vertx, "vertx.jdbc");
 
     proxy.getConnection(res -> {
